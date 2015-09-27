@@ -1,10 +1,33 @@
 <?php
 
-$REX['ADDON']['version']['prozer'] = '3.0';
-$REX['ADDON']['author']['prozer'] = 'Jan Kristinus, Gregor Harlan, Thomas Blum';
+$addon = 'prozer';
 
-$REX['ADDON']['xform']['classpaths']['value']['prozer'] = rex_path::addon('prozer', 'xform/value/');
-$REX['ADDON']['xform']['classpaths']['validate']['prozer'] = rex_path::addon('prozer', 'xform/validate/');
+$REX['ADDON']['version'][$addon] = '3.0';
+$REX['ADDON']['author'][$addon] = 'Jan Kristinus, Gregor Harlan, Thomas Blum';
+$REX['ADDON']['supportpage'][$addon] = 'prozer.org';
+
+$REX['ADDON']['xform']['classpaths']['value'][$addon] = rex_path::addon($addon, 'xform/value/');
+$REX['ADDON']['xform']['classpaths']['validate'][$addon] = rex_path::addon($addon, 'xform/validate/');
+
+/**
+ *
+ *
+ */
+if ($REX['REDAXO'] && is_object($REX['USER'])) {
+
+    $I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/' . $addon . '/lang/');
+
+    $REX['ADDON']['name'][$addon] = $I18N->msg('prozer');
+    $REX['ADDON']['perm'][$addon] = 'import_export[export]';
+
+    $REX['ADDON']['supportpage'][$addon] = 'prozer.org';
+
+
+    $REX['ADDON']['pages'][$addon] = array();
+    $REX['ADDON']['pages'][$addon][] = array ('setup', $I18N->msg('setup'));
+    $REX['ADDON']['pages'][$addon][] = array ('about', $I18N->msg('about'));
+
+}
 
 if (!$REX['REDAXO']) {
     rex_register_extension('OUTPUT_FILTER', function ($ep) {

@@ -26,6 +26,11 @@ $sql->setQuery('ALTER TABLE `pz_wiki` ADD `position` VARCHAR( 255 ) NOT NULL AFT
 $dav_path = rex_path::addonData('prozer', 'dav');
 rex_dir::create($dav_path);
 
+
+rex_dir::copy(
+    rex_path::addon('prozer', 'assets'),
+    rex_path::frontend('assets/addons/prozer')
+);
 // -------------------------------------------------
 
 $REX['ADDON']['update']['prozer'] = true;

@@ -26,6 +26,10 @@ show_day_short2 = %a., %e.%-m
 show_time_normal = %H:%Mh
 
 
+prozer = Prozer
+about = Über
+
+
 minutes = Minuten
 allday = ganztägig
 time = Uhrzeit
