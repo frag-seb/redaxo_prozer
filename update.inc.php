@@ -2,6 +2,9 @@
 
 $error = '';
 
+$REX['ADDON']['update']['prozer'] = 0;
+OOAddon::setProperty('prozer', 'update', false);
+
 $sql = rex_sql::factory();
 
 // $REX['ADDON']['version']['prozer']
@@ -34,3 +37,4 @@ rex_dir::copy(
 // -------------------------------------------------
 
 $REX['ADDON']['update']['prozer'] = true;
+OOAddon::setProperty('prozer', 'update', true);

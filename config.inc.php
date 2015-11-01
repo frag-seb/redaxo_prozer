@@ -24,8 +24,8 @@ if ($REX['REDAXO'] && is_object($REX['USER'])) {
 
 
     $REX['ADDON']['pages'][$addon] = array();
-    $REX['ADDON']['pages'][$addon][] = array ('setup', $I18N->msg('setup'));
-    $REX['ADDON']['pages'][$addon][] = array ('about', $I18N->msg('about'));
+    $REX['ADDON']['pages'][$addon][] = array ('about', $I18N->msg('prozer_overview'));
+    $REX['ADDON']['pages'][$addon][] = array ('setup', $I18N->msg('prozer_settings'));
 
 }
 
